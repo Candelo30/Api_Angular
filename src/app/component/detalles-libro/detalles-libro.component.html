@@ -1,0 +1,12 @@
+@if (libro) {
+<div class="container">
+  <div class="close" (click)="CloseModal()">❌</div>
+  <h2>{{ libro.titulo }}</h2>
+  <img [src]="libro.caratula" alt="{{ libro.titulo }}" />
+  <p><strong>Autor:</strong> {{ libro.autor }}</p>
+  <p><strong>Año de Publicación:</strong> {{ libro.anio_publicacion }}</p>
+  <p><strong>Género:</strong> {{ libro.genero }}</p>
+  <p>{{ libro.descripcion }}</p>
+  <p>{{ libro.sinopsis }}</p>
+</div>
+}

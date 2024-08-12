@@ -1,0 +1,28 @@
+<header>
+  <span>Biblioteca</span>
+  <div>
+    <input
+      type="text"
+      placeholder="Buscar..."
+      [(ngModel)]="searchTerm"
+      (input)="filterBooks()"
+    />
+  </div>
+</header>
+
+<main>
+  <ul class="main-list">
+    @for (items of filteredData; track items) {
+    <li class="items-list" (click)="onSelect(items)">
+      <div class="container-img">
+        <img [src]="items.caratula" alt="" />
+      </div>
+      <span>{{ items.titulo }}</span>
+    </li>
+
+    }
+  </ul>
+  @if (IsOpenModal) {
+  <app-detalles-libro [libro]="selectedBook"></app-detalles-libro>
+  }
+</main>
